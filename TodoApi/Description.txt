@@ -1,0 +1,10 @@
+﻿1.ApiController 属性,用于标注Web API控制器类，添加此类后自动新增以下功能：
+   （1）自动HTTP400响应，模型验证错误会自动触发HTTP400响应，不再需要添加以下代码
+   if (!ModelState.IsValid)
+{
+    return BadRequest(ModelState);
+	｝
+
+2.必须使用特性路由如[Route("api/[controller]")]，不能通过 UseMvc 中定义的传统路由或通过 Startup.Configure 中的 UseMvcWithDefaultRoute 访问操作。
+并且继承自ControllerBase基类(表示创建Api控制器类)
+3.ASP.NET Core 路由不区分大小写
